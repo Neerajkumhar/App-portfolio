@@ -1,10 +1,8 @@
-import { useMemo, useState } from 'react'
 import { ArrowIcon } from '../components/ArrowIcon'
 import { DeviceFrame } from '../components/DeviceFrame'
-import { FilterBar } from '../components/FilterBar'
 import { ProjectCard } from '../components/ProjectCard'
 import { Reveal } from '../components/Reveal'
-import { projects, type Filter } from '../data/projects'
+import { projects } from '../data/projects'
 import { site } from '../data/site'
 
 const aboutImage = `${import.meta.env.BASE_URL}About-img.png`
@@ -37,12 +35,6 @@ const capabilities = [
 ]
 
 export function Home() {
-  const [active, setActive] = useState<Filter>('All')
-  const visibleProjects = useMemo(
-    () => (active === 'All' ? projects : projects.filter((project) => project.industry === active)),
-    [active],
-  )
-
   return (
     <>
       <section className="hero" id="top">
@@ -79,10 +71,6 @@ export function Home() {
           </Reveal>
 
           <Reveal className="hero__visual">
-            <div className="hero__visual-head">
-              <span>Selected reference screens</span>
-              <span>01—03</span>
-            </div>
             <div className="hero__strip">
               {projects.slice(0, 3).map((project) => (
                 <DeviceFrame
@@ -102,16 +90,14 @@ export function Home() {
       <section className="section" id="work">
         <div className="shell">
           <Reveal className="section-head">
-            <p className="eyebrow">01 / Selected work</p>
-            <h2>Five apps, five different jobs.</h2>
+            <h2>Selected work</h2>
             <p className="note">
               These are interface studies, not client work. Screenshots show the original apps and
               are credited on each case study.
             </p>
           </Reveal>
-          <FilterBar active={active} onChange={setActive} />
           <div className="project-grid">
-            {visibleProjects.map((project) => (
+            {projects.map((project) => (
               <ProjectCard
                 key={project.slug}
                 project={project}
@@ -125,8 +111,7 @@ export function Home() {
       <section className="section section--alt" id="approach">
         <div className="shell">
           <Reveal className="section-head">
-            <p className="eyebrow">02 / Approach</p>
-            <h2>Read it. Reduce it. Rebuild it.</h2>
+            <h2>Approach</h2>
           </Reveal>
           <div className="steps">
             {steps.map((step) => (
@@ -154,8 +139,7 @@ export function Home() {
           </Reveal>
           <div className="about-content">
             <Reveal className="about-heading">
-              <p className="eyebrow">03 / About</p>
-              <h2>Frontend work with the reasoning left in.</h2>
+              <h2>About</h2>
             </Reveal>
             <Reveal className="about-copy">
               <p>
@@ -172,8 +156,7 @@ export function Home() {
       <section className="section section--alt" id="capabilities">
         <div className="shell">
           <Reveal className="section-head">
-            <p className="eyebrow">04 / Capabilities</p>
-            <h2>What these studies exercise.</h2>
+            <h2>Capabilities</h2>
           </Reveal>
           <Reveal>
             <ul className="tag-list">

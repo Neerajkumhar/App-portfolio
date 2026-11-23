@@ -287,18 +287,6 @@ img {
   border-color: var(--color-primary-strong);
 }
 
-.hero__visual-head {
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-  margin-bottom: 0.75rem;
-  font-size: 0.7rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-  color: var(--color-muted);
-}
-
 .hero__strip {
   display: grid;
   grid-template-columns: 1.05fr 0.95fr 1fr;
@@ -381,7 +369,6 @@ img {
 
 .section-head h2 {
   font-size: clamp(2rem, 4vw, 3.25rem);
-  margin-top: 0.5rem;
   max-width: 20ch;
 }
 
@@ -398,37 +385,6 @@ img {
   color: var(--color-muted);
   font-size: 0.9375rem;
   max-width: 60ch;
-}
-
-.filters {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-bottom: 2rem;
-}
-
-.chip {
-  min-height: 40px;
-  padding: 0.45rem 0.9rem;
-  border: 1px solid var(--color-hairline);
-  border-radius: var(--radius);
-  background: transparent;
-  color: var(--color-muted);
-  font: inherit;
-  font-size: 0.875rem;
-  font-weight: 500;
-  transition: background 0.2s var(--ease), color 0.2s var(--ease);
-}
-
-.chip[aria-pressed='true'] {
-  background: var(--color-surface-cream-strong);
-  border-color: var(--color-surface-cream-strong);
-  color: var(--color-ink);
-}
-
-.chip__count {
-  margin-left: 0.45rem;
-  font-size: 0.75em;
 }
 
 .project-grid {
@@ -1258,12 +1214,6 @@ code {
 
   .section {
     padding: 3.5rem 0;
-  }
-
-  .chip {
-    min-height: 38px;
-    padding: 0.4rem 0.7rem;
-    font-size: 0.8125rem;
   }
 
   .project-grid {

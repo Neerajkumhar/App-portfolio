@@ -1,9 +1,6 @@
 export type Industry = 'Agriculture' | 'Food' | 'Crafts' | 'Utility' | 'Gaming'
 export type AppShape = 'arch' | 'capsule' | 'squircle' | 'slab' | 'ticket'
 
-export const filters = ['All', 'Agriculture', 'Food', 'Crafts', 'Utility', 'Gaming'] as const
-export type Filter = (typeof filters)[number]
-
 export interface ProjectScreenshot {
   src: string
   alt: string
